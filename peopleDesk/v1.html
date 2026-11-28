@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f7fb">
+  <meta name="description" content="peopleDesk interactive prototype for time tracking and reports.">
+  <title>peopleDesk · Overview</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="workflows.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="workspace-shell">
+    <aside class="sidebar" id="workspace-sidebar">
+      <div class="workspace-brand">
+        <span class="workspace-monogram" aria-hidden="true">K</span>
+        <span><strong>Kobizo</strong><small>Workspace</small></span>
+        <button class="sidebar-toggle" type="button" data-action="toggle-sidebar" aria-label="Collapse sidebar" aria-expanded="true" aria-controls="workspace-navigation"><img src="assets/Group6.svg" alt=""></button>
+      </div>
+      <nav id="workspace-navigation" class="workspace-nav" aria-label="Main navigation">
+        <p class="workspace-label">Workspace</p>
+        <a class="workspace-item" href="#overview" data-route="overview" aria-label="Overview"><img src="assets/IconGrid.svg" alt=""><span>Overview</span></a>
+        <details class="nav-section" open>
+          <summary class="workspace-item" aria-label="Projects &amp; Time"><img src="assets/IconClock.svg" alt=""><span>Projects &amp; Time</span><img class="nav-chevron chevron-down" src="assets/Group.svg" alt=""><img class="nav-chevron chevron-up" src="assets/Group5.svg" alt=""></summary>
+          <div class="workspace-subnav">
+            <span>Project Management</span>
+            <a href="#time" data-route="time">Daily &amp; Weekly Time Tracking</a>
+          </div>
+        </details>
+        <details class="nav-section" open>
+          <summary class="workspace-item" aria-label="Reports"><img src="assets/IconChart.svg" alt=""><span>Reports</span><img class="nav-chevron chevron-down" src="assets/Group.svg" alt=""><img class="nav-chevron chevron-up" src="assets/Group5.svg" alt=""></summary>
+          <div class="workspace-subnav">
+            <a href="#reports?scope=personal" data-report-scope="personal" data-route="reports">Personal Reports</a>
+            <a href="#reports?scope=team" data-report-scope="team" data-route="reports" data-access="teamReports">Team Reports</a>
+          </div>
+        </details>
+        <a class="workspace-item" href="#invoices" data-route="invoices" data-access="invoices" aria-label="Invoices"><img src="assets/IconChart.svg" alt=""><span>Invoices</span></a>
+        <details class="nav-section" open>
+          <summary class="workspace-item" aria-label="Calendar &amp; Leave"><img src="assets/IconCalendar.svg" alt=""><span>Calendar &amp; Leave</span><img class="nav-chevron chevron-down" src="assets/Group.svg" alt=""><img class="nav-chevron chevron-up" src="assets/Group5.svg" alt=""></summary>
+          <div class="workspace-subnav">
+            <span>Personal Calendar</span>
+            <span>Company Calendar</span>
+            <a href="#leave" data-route="leave">Request Management</a>
+            <span>Calendar Settings</span>
+          </div>
+        </details>
+        <details class="nav-section nav-preview" open>
+          <summary class="workspace-item" aria-label="Surveys &amp; Feedback"><img src="assets/IconMessage.svg" alt=""><span>Surveys &amp; Feedback</span><img class="nav-chevron chevron-down" src="assets/Group.svg" alt=""><img class="nav-chevron chevron-up" src="assets/Group5.svg" alt=""></summary>
+          <div class="workspace-subnav">
+            <span>Survey List</span>
+            <span>Feedback</span>
+          </div>
+        </details>
+        <details class="nav-section" data-access="hiring" open>
+          <summary class="workspace-item" aria-label="Recruiting"><img src="assets/IconBriefcase.svg" alt=""><span>Recruiting</span><img class="nav-chevron chevron-down" src="assets/Group.svg" alt=""><img class="nav-chevron chevron-up" src="assets/Group5.svg" alt=""></summary>
+          <div class="workspace-subnav">
+            <a href="#job-postings" data-route="job-postings" data-access="hiringSetup">Job Postings</a>
+            <a href="#recruiting" data-route="recruiting">Candidate Management</a>
+            <a href="#hiring-workflows" data-route="hiring-workflows" data-access="hiringSetup">Recruitment Workflow Settings</a>
+            <span>Email Templates</span>
+            <span>Assessment Management</span>
+          </div>
+        </details>
+        <details class="nav-section" data-access="administration" open>
+          <summary class="workspace-item" aria-label="Admin"><img src="assets/IconShield.svg" alt=""><span>Admin</span><img class="nav-chevron chevron-down" src="assets/Group.svg" alt=""><img class="nav-chevron chevron-up" src="assets/Group5.svg" alt=""></summary>
+          <div class="workspace-subnav">
+            <span>User Management</span>
+            <span>Role Management</span>
+            <details class="nav-section nav-section-nested" open>
+              <summary class="workspace-item" aria-label="Access Permissions"><span>Access Permissions</span><img class="nav-chevron chevron-down" src="assets/Group.svg" alt=""><img class="nav-chevron chevron-up" src="assets/Group5.svg" alt=""></summary>
+              <div class="workspace-subnav">
+                <a href="#permissions" data-route="permissions">Permission Matrix</a>
+                <span>Data Visibility</span>
+              </div>
+            </details>
+          </div>
+        </details>
+        <div class="nav-preview">
+          <strong class="workspace-item">Notifications</strong>
+          <details class="nav-section" open>
+            <summary class="workspace-item" aria-label="Personal Account"><span>Personal Account</span><img class="nav-chevron chevron-down" src="assets/Group.svg" alt=""><img class="nav-chevron chevron-up" src="assets/Group5.svg" alt=""></summary>
+            <div class="workspace-subnav">
+              <span>View and Edit Profile</span>
+              <span>Account Settings</span>
+              <span>Change Password</span>
+              <span>Sign Out</span>
+            </div>
+          </details>
+        </div>
+      </nav>
+      <a class="sidebar-logo" href="#overview" aria-label="peopleDesk overview"><img src="assets/Group4.svg" alt=""></a>
+    </aside>
+    <div class="workspace-body">
+      <header class="workspace-topbar">
+        <label class="prototype-role">Demo access <select id="demo-role"></select></label>
+        <a class="button secondary version-switch" href="v2/index.html">Open prototype v2 ↗</a>
+        <div class="workspace-tools">
+          <details class="workspace-search">
+            <summary><img src="assets/Group2.svg" alt=""> Quick search</summary>
+            <div class="search-panel">
+              <label class="field">Find a page<input id="workspace-search" type="search" placeholder="Search pages"></label>
+              <a href="#overview">Overview</a>
+              <a href="#time">Daily &amp; Weekly Time Tracking</a>
+              <a href="#reports?scope=personal" data-report-scope="personal">Personal Reports</a>
+              <a href="#reports?scope=team" data-report-scope="team" data-access="teamReports">Team Reports</a>
+              <a href="#invoices" data-access="invoices">Invoices</a>
+              <a href="#leave">Leave requests</a>
+              <a href="#permissions" data-access="administration">Permission Matrix</a>
+              <a href="#recruiting" data-access="hiring">Candidate Management</a>
+              <a href="#job-postings" data-access="hiringSetup">Job Postings</a>
+              <a href="#hiring-workflows" data-access="hiringSetup">Recruitment Workflow Settings</a>
+              <p hidden>No matching pages.</p>
+            </div>
+          </details>
+          <span class="avatar" aria-label="Hà Linh" title="Hà Linh">HL</span>
+        </div>
+      </header>
+      <main id="main" class="container" tabindex="-1"></main>
+    </div>
+  </div>
+  <div id="notification" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="manual-dialog" aria-labelledby="manual-title">
+    <form id="manual-form" novalidate>
+      <div class="dialog-header"><div><h2 id="manual-title">Add a manual entry</h2><p>Enter the hours you worked and why you’re adding them.</p></div><button type="button" class="icon-button" data-action="close-manual" aria-label="Close dialog">×</button></div>
+      <div class="form-grid">
+        <label>Work date (dd/mm/yyyy)<input type="text" name="date" placeholder="dd/mm/yyyy" maxlength="10" autocomplete="off" required></label>
+        <label>Project<select name="project" required></select></label>
+        <label>Start time<input type="time" name="start" required></label>
+        <label>End time<input type="time" name="end" required></label>
+        <label class="full-width">Reason<textarea name="reason" rows="3" maxlength="240" placeholder="Why are you adding this time?" required></textarea></label>
+      </div>
+      <p id="manual-error" class="form-error" role="alert" hidden></p>
+      <div class="dialog-actions"><button type="button" class="button secondary" data-action="close-manual">Cancel</button><button class="button primary" type="submit">Save Manual Entry</button></div>
+    </form>
+  </dialog>
+</body>
+</html>

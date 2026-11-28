@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7fb">
+  <title>peopleDesk v2 · Overview</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="v2.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body class="v2">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="v2-shell">
+    <aside class="v2-sidebar" aria-label="Workspace sidebar">
+      <a class="v2-brand" href="#overview">
+        <span class="workspace-monogram" aria-hidden="true">K</span>
+        <span><strong>Kobizo</strong><small>Workspace</small></span>
+      </a>
+      <nav class="v2-nav" aria-label="Main navigation">
+        <p class="workspace-label">Workspace</p>
+        <a href="#overview" data-route="overview"><img src="../assets/IconGrid.svg" alt="">Overview</a>
+        <a href="#projects" data-route="projects"><img src="../assets/IconTeam.svg" alt="">Projects &amp; tasks</a>
+        <a href="#time" data-route="time" data-permission="log"><img src="../assets/IconClock.svg" alt="">Time tracking</a>
+        <p class="workspace-label">Insights</p>
+        <a href="#reports?scope=personal" data-route="reports" data-permission="log"><img src="../assets/IconChart.svg" alt="">Personal reports</a>
+        <a href="#reports?scope=team" data-route="reports" data-permission="manage"><img src="../assets/IconTeam.svg" alt="">Team reports</a>
+        <a href="#invoices" data-route="invoices" data-permission="manage"><img src="../assets/IconBriefcase.svg" alt="">Invoices</a>
+        <a href="#leave" data-route="leave" data-permission="log"><img src="../assets/IconCalendar.svg" alt="">Leave requests</a>
+        <p class="workspace-label">Recruiting</p>
+        <a href="#jobs" data-route="jobs" data-permission="hiring"><img src="../assets/IconBriefcase.svg" alt="">Hiring</a>
+        <a href="#careers" data-route="careers"><img src="../assets/IconTeam.svg" alt="">Public Careers</a>
+      </nav>
+      <footer class="v2-sidebar-footer">
+        <img src="../assets/Group4.svg" alt="peopleDesk">
+        <a href="../v1.html">Open prototype v1 ↗</a>
+      </footer>
+    </aside>
+    <div class="v2-body">
+      <header class="v2-topbar">
+        <div><strong>peopleDesk</strong><span class="v2-version">Prototype v2</span></div>
+        <label for="role">Demo role</label>
+        <select id="role">
+          <option value="employee">Employee</option>
+          <option value="manager">Manager</option>
+          <option value="admin">Admin / HR</option>
+        </select>
+        <span class="avatar" title="Hà Linh" aria-label="Hà Linh">HL</span>
+      </header>
+      <main id="main" class="v2-main" tabindex="-1"></main>
+    </div>
+  </div>
+  <dialog id="modal" aria-labelledby="modal-title"></dialog>
+  <div id="notice" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
